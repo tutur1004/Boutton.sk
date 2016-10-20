@@ -1,8 +1,12 @@
-on load:
-	#Bouton en x+10 z-10 :
-	add location 10, 70, -10 of world "world" to {bouton.pos.1::*}
-	#Bouton en x+150 z-250 :
-	add location 150, 50, -250 of world "world" to {bouton.pos.1::*}
+# ###########################
+# #							#
+# #		Button Breaker's	#
+# #		-Par tutur1004-		#
+# #							#
+# ###########################
+
+#	Pour Ajouter des nouveaux boutons descendez à la fin du skript (Merci de ne surtout pas déplacer le "on load:" vers en haut
+
 on unload:
 	clear {bouton.pos.1::*}
 	clear {bouton.pos.2::*}
@@ -39,3 +43,18 @@ on rightclick on inactive button:
 	if event-block is north button off:
 		set {_pitch} to "north"
 	boutonBloc(event-location, "%{_pitch}%")
+
+
+
+
+
+
+
+
+on load:
+	#Exemple : Bouton en x+10 z-10 :
+	#Donnera : add location 10, 70, -10 of world "world" to {bouton.pos.1::*}
+	#Exemple : Bouton en x+150 z-250 :
+	#Donnera : add location 150, 50, -250 of world "world" to {bouton.pos.1::*}
+	#	Vous pouvez ajouter vos boutons à partir de la ligne ci-dessous (N'oubliez pas de retirer le #)
+	#add location ...
