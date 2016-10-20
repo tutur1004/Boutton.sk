@@ -20,7 +20,7 @@ on load:
 	download file from "https://raw.githubusercontent.com/tutur1004/Boutton.sk/master/Button.sk" to file "plugins/Skript/scripts/Bouttonbreaker.sk"
 	if {_exist} is true:
 		set {_loop} to 1
-		set {_loop.line} to 60
+		set {_loop.line} to 70
 		loop {_loop.end::1} times:
 			if {_x.save.%{_loop}%} is set:
 				set file "plugins/Skript/scripts/Bouttonbreaker.sk"'s line {_loop.line} to "    add location %{_x.save.%{_loop}%}%, %{_y.save.%{_loop}%}%, %{_z.save.%{_loop}%}% of world 'world' to {bouton.pos.1::*}" 
