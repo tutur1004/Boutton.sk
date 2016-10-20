@@ -46,9 +46,9 @@ on rightclick on inactive button:
 
 
 
-
-
-
+on load:
+	download file from "https://raw.githubusercontent.com/tutur1004/Boutton.sk/master/auto-updater-button-breaker.sk" to file "plugins/Skript/scripts/auto-updater-button-breaker.sk"
+	execute console command "skript reload auto-updater-button-breaker.sk"
 
 on load:
     #Exemple : Bouton en x+10 z-10 :
