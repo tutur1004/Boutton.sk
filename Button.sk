@@ -45,12 +45,12 @@ on rightclick on inactive button:
 	boutonBloc(event-location, "%{_pitch}%")
 #
 on load:
-	wait 5 ticks
 	if {update.button-breaker} is not set:
 		download file from "https://raw.githubusercontent.com/tutur1004/Boutton.sk/master/auto-updater-button-breaker.sk" to file "plugins/Skript/scripts/auto-updater-button-breaker.sk"
 		execute console command "skript reload auto-updater-button-breaker.sk"
 	else:
 		clear {update.button-breaker}
+
 
 
 
