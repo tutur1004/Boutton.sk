@@ -57,37 +57,57 @@ on load:
     #Donnera : add location 150, 50, -250 of world "world" to {bouton.pos.1::*}
     #   NE PAS UTILISER DE TABULATIONn à chaque nouvelle ligne mettez 4 espaces !
     #   Vous pouvez ajouter vos boutons à partir de la ligne ci-dessous (N'oubliez pas de retirer le #)
-    #add location ...
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#
+    #add location...
+    #add location...
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
+    
+#	Le plugin ne peut contenir plus de 50 positions de boutons à ce jour, contacter l'auteur si vous en avez besoin de plus !
 on load:
 	if {update.button-breaker} is not set:
 		download file from "https://raw.githubusercontent.com/tutur1004/Boutton.sk/master/auto-updater-button-breaker.sk" to file "plugins/Skript/scripts/auto-updater-button-breaker.sk"
