@@ -8,6 +8,7 @@
 #	Pour Ajouter des nouveaux boutons descendez à la fin du skript (Merci de ne surtout pas déplacer le "on load:" vers en haut
 
 on unload:
+	wait 1 second
 	clear {update.button-breaker}
 	clear {bouton.pos.1::*}
 	clear {bouton.pos.2::*}
@@ -50,6 +51,15 @@ on load:
 	if {update.button-breaker} is not set:
 		download file from "https://raw.githubusercontent.com/tutur1004/Boutton.sk/master/auto-updater-button-breaker.sk" to file "plugins/Skript/scripts/auto-updater-button-breaker.sk"
 		execute console command "skript reload auto-updater-button-breaker.sk"
+
+
+
+
+
+
+
+
+
 on load:
     #Exemple : Bouton en x+10 z-10 :
     #Donnera : add location 10, 70, -10 of world 'world' to {bouton.pos.1::*}
@@ -58,16 +68,6 @@ on load:
     #   NE PAS UTILISER DE TABULATIONn à chaque nouvelle ligne mettez 4 espaces !
     #   Vous pouvez ajouter vos boutons à partir de la ligne ci-dessous (N'oubliez pas de retirer le #)
     #add location ...
-
-
-
-
-
-
-
-
-
-
 
 
 
