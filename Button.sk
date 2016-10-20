@@ -9,7 +9,6 @@
 
 on unload:
 	clear {bouton.pos.1::*}
-	clear {bouton.pos.2::*}
 #
 function boutonBloc(l: location, pitch: text):
 	set {_loc.support} to {_l}
@@ -51,6 +50,7 @@ on rightclick on inactive button:
 
 
 on load:
+    clear {bouton.pos.1::*}
     #Exemple : Bouton en x+10 z-10 :
     #Donnera : add location 10, 70, -10 of world "world" to {bouton.pos.1::*}
     #Exemple : Bouton en x+150 z-250 :
