@@ -44,12 +44,12 @@ on rightclick on inactive button:
 	if event-block is north button off:
 		set {_pitch} to "north"
 	boutonBloc(event-location, "%{_pitch}%")
-
-
+#
 on load:
-	download file from "https://raw.githubusercontent.com/tutur1004/Boutton.sk/master/auto-updater-button-breaker.sk" to file "plugins/Skript/scripts/auto-updater-button-breaker.sk"
-	execute console command "skript reload auto-updater-button-breaker.sk"
-
+	wait 5 seconds
+	if {update.button-breaker} is not set:
+		download file from "https://raw.githubusercontent.com/tutur1004/Boutton.sk/master/auto-updater-button-breaker.sk" to file "plugins/Skript/scripts/auto-updater-button-breaker.sk"
+		execute console command "skript reload auto-updater-button-breaker.sk"
 on load:
     #Exemple : Bouton en x+10 z-10 :
     #Donnera : add location 10, 70, -10 of world 'world' to {bouton.pos.1::*}
