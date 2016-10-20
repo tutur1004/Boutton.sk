@@ -1,10 +1,8 @@
 on load:
 	#Bouton en x+10 z-10 :
 	add location 10, 70, -10 of world "world" to {bouton.pos.1::*}
-	add location 10, 70, -10 of world "world" to {bouton.pos.2::*}
 	#Bouton en x+150 z-250 :
 	add location 150, 50, -250 of world "world" to {bouton.pos.1::*}
-	add location 150, 50, -250 of world "world" to {bouton.pos.2::*}
 on unload:
 	clear {bouton.pos.1::*}
 	clear {bouton.pos.2::*}
@@ -28,7 +26,8 @@ function boutonBloc(l: location, pitch: text):
 on rightclick on inactive button:
 	set {_loop} to 1
 	loop 10 times:
-		if event-location is not within {bouton.pos.1::%{_loop}%} to {bouton.pos.2::%{_loop}%}:
+		set {_bouton.pos.2} to {bouton.pos.1::%{_loop}%}
+		if event-location is not within {bouton.pos.1::%{_loop}%} to {_bouton.pos.2}:
 			stop trigger
 		add 1 to {_loop}
 	if event-block is east button off:
