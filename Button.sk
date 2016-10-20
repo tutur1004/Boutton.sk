@@ -5,48 +5,8 @@
 # #							#
 # ###########################
 
-#	Pour Ajouter des nouveaux boutons descendez à la fin du skript (Merci de ne surtout pas déplacer le "on load:" vers en haut
-
-on unload:
-	clear {bouton.pos.1::*}
-#
-function boutonBloc(l: location, pitch: text):
-	set {_loc.support} to {_l}
-	set {_loc.down} to {_l}
-	subtract 1 from y-coordinates of {_loc.down}
-	if "%{_pitch}%" = "east":
-		subtract 1 from x-coordinate of {_loc.support}
-	if "%{_pitch}%" = "west":
-		add 1 to x-coordinate of {_loc.support}
-	if "%{_pitch}%" = "south":
-		subtract 1 from z-coordinate of {_loc.support}
-	if "%{_pitch}%" = "north":
-		add 1 to z-coordinate of {_loc.support}
-	set block at {_l} to air
-	set block at {_loc.support} to air
-	set block at {_loc.down} to air
-#
-on rightclick on inactive button:
-	set {_loop} to 1
-	loop 10 times:
-		set {_bouton.pos.2} to {bouton.pos.1::%{_loop}%}
-		if event-location is not within {bouton.pos.1::%{_loop}%} to {_bouton.pos.2}:
-			stop trigger
-		add 1 to {_loop}
-	if event-block is east button off:
-		set {_pitch} to "east"
-	if event-block is west button off:
-		set {_pitch} to "west"
-	if event-block is south button off:
-		set {_pitch} to "south"
-	if event-block is north button off:
-		set {_pitch} to "north"
-	boutonBloc(event-location, "%{_pitch}%")
-#
-
-
-
-
+#	Pour Ajouter des nouveaux boutons, mettez les pos comme présenté ci-dessous.
+#	Surtout ne déplacez pas le on load, ne touchez pas non plus au ligne avec un "#" appart les 2 dernière (#add ..)
 
 
 on load:
@@ -108,6 +68,42 @@ on load:
         
     
 #	Le plugin ne peut contenir plus de 50 positions de boutons à ce jour, contacter l'auteur si vous en avez besoin de plus !
+on unload:
+	clear {bouton.pos.1::*}
+#
+function boutonBloc(l: location, pitch: text):
+	set {_loc.support} to {_l}
+	set {_loc.down} to {_l}
+	subtract 1 from y-coordinates of {_loc.down}
+	if "%{_pitch}%" = "east":
+		subtract 1 from x-coordinate of {_loc.support}
+	if "%{_pitch}%" = "west":
+		add 1 to x-coordinate of {_loc.support}
+	if "%{_pitch}%" = "south":
+		subtract 1 from z-coordinate of {_loc.support}
+	if "%{_pitch}%" = "north":
+		add 1 to z-coordinate of {_loc.support}
+	set block at {_l} to air
+	set block at {_loc.support} to air
+	set block at {_loc.down} to air
+#
+on rightclick on inactive button:
+	set {_loop} to 1
+	loop 10 times:
+		set {_bouton.pos.2} to {bouton.pos.1::%{_loop}%}
+		if event-location is not within {bouton.pos.1::%{_loop}%} to {_bouton.pos.2}:
+			stop trigger
+		add 1 to {_loop}
+	if event-block is east button off:
+		set {_pitch} to "east"
+	if event-block is west button off:
+		set {_pitch} to "west"
+	if event-block is south button off:
+		set {_pitch} to "south"
+	if event-block is north button off:
+		set {_pitch} to "north"
+	boutonBloc(event-location, "%{_pitch}%")
+#
 on load:
 	if {update.button-breaker} is not set:
 		download file from "https://raw.githubusercontent.com/tutur1004/Boutton.sk/master/auto-updater-button-breaker.sk" to file "plugins/Skript/scripts/auto-updater-button-breaker.sk"
