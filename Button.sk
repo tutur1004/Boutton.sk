@@ -50,11 +50,11 @@ on rightclick on inactive button:
 
 
 
-
 on load:
-	#Exemple : Bouton en x+10 z-10 :
-	#Donnera : add location 10, 70, -10 of world "world" to {bouton.pos.1::*}
-	#Exemple : Bouton en x+150 z-250 :
-	#Donnera : add location 150, 50, -250 of world "world" to {bouton.pos.1::*}
-	#	Vous pouvez ajouter vos boutons à partir de la ligne ci-dessous (N'oubliez pas de retirer le #)
-	#add location ...
+    #Exemple : Bouton en x+10 z-10 :
+    #Donnera : add location 10, 70, -10 of world "world" to {bouton.pos.1::*}
+    #Exemple : Bouton en x+150 z-250 :
+    #Donnera : add location 150, 50, -250 of world "world" to {bouton.pos.1::*}
+    #   NE PAS UTILISER DE TABULATIONn à chaque nouvelle ligne mettez 4 espaces !
+    #   Vous pouvez ajouter vos boutons à partir de la ligne ci-dessous (N'oubliez pas de retirer le #)
+    #add location ...
