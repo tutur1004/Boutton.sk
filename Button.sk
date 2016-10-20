@@ -8,8 +8,6 @@
 #	Pour Ajouter des nouveaux boutons descendez à la fin du skript (Merci de ne surtout pas déplacer le "on load:" vers en haut
 
 on unload:
-	wait 10 seconds
-	clear {update.button-breaker}
 	clear {bouton.pos.1::*}
 	clear {bouton.pos.2::*}
 #
