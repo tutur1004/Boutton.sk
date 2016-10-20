@@ -1,0 +1,14 @@
+#	ALIASES:
+#   Ajoutez ces aliases dans le fichier aliases-english.sk
+
+	#Cardinal off
+	east {button} button¦ off¦s off = :9
+	west {button} button¦ off¦s off = :10
+	south {button} button¦ off¦s off = :11
+	north {button} button¦ off¦s off = :12
+
+	#Cardinal on
+	east {button} button¦ on¦s on = :1
+	west {button} button¦ on¦s on = :2
+	south {button} button¦ on¦s on = :3
+	north {button} button¦ on¦s on = :4
