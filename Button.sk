@@ -8,6 +8,7 @@
 #	Pour Ajouter des nouveaux boutons descendez à la fin du skript (Merci de ne surtout pas déplacer le "on load:" vers en haut
 
 on unload:
+	clear {update.button-breaker}
 	clear {bouton.pos.1::*}
 	clear {bouton.pos.2::*}
 #
@@ -43,7 +44,6 @@ on rightclick on inactive button:
 	if event-block is north button off:
 		set {_pitch} to "north"
 	boutonBloc(event-location, "%{_pitch}%")
-
 
 
 on load:
