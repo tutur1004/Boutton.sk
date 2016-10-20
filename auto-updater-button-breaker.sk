@@ -1,1 +1,31 @@
-#
+on load:
+	if {update.button-breaker} is set:
+		delete script "plugins/Skript/scripts/%script%.sk"
+		stop trigger
+	else:
+		set {update.button-breaker} to true
+	if file "plugins/Skript/scripts/Bouttonbreaker.sk" exists:
+		set {_exist} to true
+		set {_loop} to 1
+		loop 25 times:
+			if {bouton.pos.1::%{_loop}%} is set:
+				set {_x.save.%{_loop}%} to x-location of {bouton.pos.1::%{_loop}%}
+				set {_y.save.%{_loop}%} to y-location of {bouton.pos.1::%{_loop}%}
+				set {_z.save.%{_loop}%} to z-location of {bouton.pos.1::%{_loop}%}
+			else:
+				add {_loop} to {_loop.end::*}
+			add 1 to {_loop}
+		delete file "plugins/Skript/scripts/Bouttonbreaker.sk"
+	#
+	download file from "https://raw.githubusercontent.com/tutur1004/Boutton.sk/master/Button.sk" to file "plugins/Skript/scripts/Bouttonbreaker.sk"
+	if {_exist} is true:
+		set {_loop} to 1
+		set {_loop.line} to 60
+		loop {_loop.end::1} times:
+			if {_x.save.%{_loop}%} is set:
+				set file "plugins/Skript/scripts/Bouttonbreaker.sk"'s line {_loop.line} to "    add location %{_x.save.%{_loop}%}%, %{_y.save.%{_loop}%}%, %{_z.save.%{_loop}%}% of world 'world' to {bouton.pos.1::*}" 
+			add 1 to {_loop}
+			add 1 to {_loop.line}
+	wait 1 tick
+	execute console command "skript reload Bouttonbreaker.sk"
+	delete script "plugins/Skript/scripts/%script%.sk"
